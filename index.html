@@ -1,23 +1,310 @@
- <div class="navbar">
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <div class="nav-links">
-            <a href="#" class="active">Latest</a>
-            <a href="https://viora4.netlify.app/">Home</a>
-            <a href="https://viora4-news-blogs.netlify.app/">News</a>
-            <a href="https://viora4-blogs.netlify.app/">Blogs</a>
-            <a href="https://nouman007pro.github.io/privacy.github.io/">Privacy</a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-        </div>
-    </div>
-    
-    <script>
-        function toggleMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Card Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            overflow-x: auto;
+        }
+
+        .card {
+            flex: 0 0 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+
+        .card-image {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 0 0 200px;
+            }
+        }hr {
+           border: 0;
+           height: 1px;
+           background: lightslategray;
+           margin: 20px 0;
+  }
+        .cover-container {
+            height: 30vh;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+           .cover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .cover-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1E3A8A;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .card a:hover {
+      background: #152C5B;
+    }
+    .shadow-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.6);
+            pointer-events: none;
+        }
+
+        .cover-image:hover .shadow-cover {
+            box-shadow: inset 0 0 50px 15px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cover-container">
+        <img src="C:\Users\lenovo\Documents\viora4\blogs\images\Screenshot 2025-03-10 172244.png" alt="Cover Photo" class="cover-image">
+        <div class="shadow-cover"></div>      <h1 class="cover-title">"**"Breaking Today: Unfiltered News & Global Updates"**"</h1>
+    </div>
+
+    <div class="container">
+        <div class="card-container">
+            <div class="card">
+        <img src="C:\Users\lenovo\Documents\viora4\blogs\images\trump.png" alt="Card 1" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">"What did Zelenskyy do in Saudi Arabia?"</h3>
+                    <p>Latest Trump policy on Ukraine war is america..</p>
+                    <a href="https://viora4-news-blogs.netlify.app/">Read More</a> </div>
+            </div>
+
+            
+            <div class="card">
+              <img src="C:\Users\lenovo\Documents\viora4\blogs\images\Screenshot 2025-03-10 203443.png" alt="Card 1" class="card-image">
+                      <div class="card-content">
+                          <h3 class="card-title">"MrBeast Expands His Business Empire: From YouTube to Billion-Dollar Ventures"</h3>
+                          <p>Massive Business Growth & Future Investments..</p>
+                          <a href="https://mrbeast-net-wealth-future-plan.netlify.app/
+                          ">Read More</a> </div>
+              </div>
+        </div>
+
+
+        
+    </div>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+      }
+
+      .footer {
+          background: #2f2f2f;
+          color: #fff;
+          padding: 50px 20px;
+          line-height: 1.6;
+      }
+
+      .footer-content {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+      }
+
+      .footer-section h3 {
+          color: #fff;
+          margin-bottom: 20px;
+          font-size: 18px;
+      }
+
+      .footer-about p {
+          margin-bottom: 15px;
+      }
+
+      .newsletter-input {
+          display: flex;
+          margin-top: 15px;
+      }
+
+      .newsletter-input input {
+          padding: 10px;
+          border: none;
+          width: 70%;
+      }
+
+      .newsletter-input button {
+          padding: 10px 15px;
+          background: #007bff;
+          border: none;
+          color: white;
+          cursor: pointer;
+      }
+
+      .news-item {
+          margin-bottom: 20px;
+      }
+
+      .news-date {
+          color: #888;
+          font-size: 14px;
+          margin-top: 5px;
+      }
+
+      .footer-links {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+      }
+
+      .footer-links a {
+          color: #ccc;
+          text-decoration: none;
+          display: block;
+      }
+
+      .footer-links a:hover {
+          color: #fff;
+      }
+
+      .copyright {
+          text-align: center;
+          margin-top: 50px;
+          padding-top: 30px;
+          border-top: 1px solid #444;
+          color: #888;
+      }
+
+      @media (max-width: 768px) {
+          .footer-content {
+              grid-template-columns: 1fr;
+          }
+      }
+  </style>
+
+
+  <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-section footer-about">
+              <h3>About</h3>
+              <p>Ghori Town,<br>Islamabad, 44000, Pakistan</p>
+              <p>+92 319 972 9298</p>
+              <p>mindmentor2025@gmail.com</p>
+              <div class="newsletter-input">
+                  <input type="email" placeholder="Enter email address">
+                  <button>Submit</button>
+              </div>
+          </div>
+
+          <div class="footer-section">
+              <h3>Latest News</h3>
+              <div class="news-item">
+                  <p>Trump New Policies could be game changer for america</p>
+                  <div class="news-date">Mar. 11, 2020  Admin  19</div>
+              </div>
+              <div class="news-item">
+                  <p>Ukrain President went to Saudi Arabia For Meeting with highness</p>
+                  <div class="news-date">Mar. 11, 2020  Admin  19</div>
+              </div>
+          </div>
+
+          <div class="footer-section">
+              <h3>Information</h3>
+              <div class="footer-links">
+                  <div>
+                      <a href="https://viora4.netlify.app/">Home</a>
+                      <a href="https://viora4-news-blogs.netlify.app/">News</a>
+                      <a href="https://nouman007pro.github.io/privacy.github.io/">Privacy</a>
+                      <a href=""></a>
+                  </div>
+                  <div>
+                      <a href="#">Help & Support</a>
+                      <a href="#instagram"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="copyright">
+          <p>Copyright ©2025 All rights reserved.</p>
+          <p>This Website Created ♥ by viora4.netlify.app Team</p>
+      </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // JavaScript for interactivity (if needed)
+    console.log("Website loaded successfully!");
+  </script>
+        <!-- Up Arrow -->
+        <button class="up-arrow" onclick="scrollToTop()">&#8593;</button>
+      </footer>
     
-    
-   
+      
+</body>
+</html>
